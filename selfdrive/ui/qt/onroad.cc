@@ -490,22 +490,22 @@ void AnnotatedCameraWidget::drawHud(QPainter &p) {
   drawText(p, rect().center().x(), 290, speedUnit, 200);
 
   // engage-ability icon
-  if (engageable) {
-    if (showDebugUI && showVTC) {
-      drawVisionTurnControllerUI(p, rect().right() - 184 - bdr_s, int(bdr_s * 1.5), 184, vtcColor, vtcSpeed, 100);
-    } else {
-      // engage-ability icon
-      SubMaster &sm = *(uiState()->sm);
-      drawIcon(p, rect().right() - radius / 2 - bdr_s * 2, radius / 2 + int(bdr_s * 1.5),
-               sm["controlsState"].getControlsState().getExperimentalMode() ? experimental_img : engage_img, blackColor(166), 1.0);
-    }
+  // if (engageable) {
+  //   if (showDebugUI && showVTC) {
+  //     drawVisionTurnControllerUI(p, rect().right() - 184 - bdr_s, int(bdr_s * 1.5), 184, vtcColor, vtcSpeed, 100);
+  //   } else {
+  //     // engage-ability icon
+  //     SubMaster &sm = *(uiState()->sm);
+  //     drawIcon(p, rect().right() - radius / 2 - bdr_s * 2, radius / 2 + int(bdr_s * 1.5),
+  //              sm["controlsState"].getControlsState().getExperimentalMode() ? experimental_img : engage_img, blackColor(166), 1.0);
+  //   }
 
-    // Turn Speed Sign
-    if (showTurnSpeedLimit) {
-      rc.moveTop(speed_sgn_rc.bottom() + bdr_s);
-      drawTurnSpeedSign(p, rc, turnSpeedLimit, mtscSubText, curveSign, mtscActive);
-    }
-  }
+  //   // Turn Speed Sign
+  //   if (showTurnSpeedLimit) {
+  //     rc.moveTop(speed_sgn_rc.bottom() + bdr_s);
+  //     drawTurnSpeedSign(p, rc, turnSpeedLimit, mtscSubText, curveSign, mtscActive);
+  //   }
+  // }
 
   // dm icon
   if (!hideDM) {
